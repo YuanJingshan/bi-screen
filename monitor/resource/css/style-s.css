@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #142437;
+    /*background: #fff url(../img/bg.jpg) no-repeat left top;*/
+    /*background-size: 100% 100%;*/
+}
+
+.geo {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.bar {
+    padding-top: 7%;
+    width: 30%;
+    min-height: 650px;
+    height: 60%;
+    float: left;
+}

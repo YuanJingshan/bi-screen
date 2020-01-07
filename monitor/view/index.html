@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>综合数据服务平台</title>
+    <link rel="shortcut icon" href="../resource/img/favicon.ico" type="image/x-icon"/>
+    <link type="text/css" rel="stylesheet" href="../resource/css/style-s.css"/>
+</head>
+
+<body>
+
+<div class="content">
+<!--    <div id="gd" style="width: 500px; height: 300px; background-color: white;"></div>-->
+    <div>
+        <div>
+            <span>历史交易总笔数</span>
+        </div>
+
+        <div>
+            <span>成功交易笔数</span>
+            <span>失败交易笔数</span>
+            <span>TPS并发数</span>
+            <span>交易成功率</span>
+        </div>
+    </div>
+    <div class="geo" id="geo"></div>
+    <div class="bar" id="bar"></div>
+</div>
+
+<script type="text/javascript" src="../resource/js/common/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../resource/js/plugin/echarts.min.js"></script>
+<script type="text/javascript" src="../resource/js/plugin/china.js"></script>
+<script type="text/javascript" src="../resource/js/lxjy/lxjy.js"></script>
+<script type="text/javascript">
+    //生成地图
+    generateMap();
+    barGreate();
+    setInterval(barGreate, 5 * 1000);
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        var gd = $("#gd");
+        gd.text("保互通（北京）有限公司<br />爱心人寿保险股份有限公司<br />农银人寿保险股份有限公司<br />弘康人寿保险股份有限公司<br />百年人寿保险股份有限公司<br />天安人寿保险股份有限公司<br />泛华联兴<br />中信总行<br />中信银行<br />中胜信用管理有限公司<br />中金金融认证中心有限公司<br />中国银行<br />腾讯征信有限公司<br />联通支付有限公司<br />联通大数据公司有限公司<br />拉卡拉支付股份有限公司<br />考拉征信服务有限公司<br />今日头条有限公司<br />百融金融信息服务股份有限公司<br />中融信托<br />得意音通<br />中信百信银行股份有限公司<br />中金支付-智能收付平台<br />保险<br />北京字节跳动科技有限公司<br />北京中投科信电子商务有限责任公司<br />北京展鸿软通科技股份有限公司<br />北京银联商务有限公司<br />北京宜信致诚信用管理有限公司<br />北京一九付支付科技有限公司<br />北京雅酷时空信息交换技术有限公司<br />北京新浪支付科技有限公司<br />北京数字王府井科技有限公司<br />北京数码视讯支付技术有限公司<br />北京榕树科技有限公司<br />北京钱袋宝支付技术有限公司<br />北京理房通支付科技有限公司<br />北京懒猫金融信息服务有限公司<br />北京京东世纪贸易有限公司<br />北京华科讯思软件技术有限公司<br />北京华道征信有限公司<br />北京和融通支付科技有限公司<br />北京海科融通支付服务股份有限公司<br />");
+    });
+</script>
+<script>
+    $('div.marquee').each(function () {
+        if (this.scrollHeight > this.offsetHeight) $(this).html('<marquee behavior="scroll" direction="up" scrollamount="5" height="300" onmouseover="this.stop()" onmouseout="this.start()">' + this.innerHTML + '</marquee>');
+    });
+</script>
+</body>
+</html>

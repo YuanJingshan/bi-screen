@@ -1,0 +1,16 @@
+### log ###
+logs/
+*.log
+*.log.*
+
+### maven ###
+target/
+.mvn
+mvnw
+mvnw.cmd
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr

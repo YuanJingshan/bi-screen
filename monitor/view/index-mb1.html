@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>综合数据服务平台</title>
+    <link rel="shortcut icon" href="../resource/img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="../resource/css/bigScreen.css"/>
+</head>
+
+<body>
+<header id="header">
+    <h3 class="header-title">综合数据服务平台智能监控</h3>
+</header>
+
+<div id="container">
+    <div id="flexCon">
+        <div class="flex-row">
+            <div class="flex-cell flex-cell-l">
+                <div class="chart-wrapper">
+					<div>
+						<h3 class="chart-title" style="color: #e5e528; font-size: 2em;">负面舆情播报</h3>
+						<div class="marquee" style="margin-top: 3%; width: 100%; height: 300px; color: #9aa8d4; font-size: 2em;">上海新颜人工智能科技有限公司<br />敏感词: 爬虫|公安|停业<br /><br />深圳前海微众银行股份有限公司<br />敏感词: 异常|非法|重点关注|监管|风险|现金贷|征信|信用|信用卡|欺诈<br /><br />中信百信银行股份有限公司<br />敏感词: 异常|非法|重点关注|监管|风险|现金贷|征信|信用|信用卡|欺诈<br /><br />浙江网商银行股份有限公司<br />敏感词: 异常|非法|重点关注|监管|风险|现金贷|征信|信用|信用卡|欺诈<br /><br />上海银联电子支付服务有限公司<br />敏感词: 处罚|金融信息|持牌|信用|信用卡<br /><br />东方财富信息股份有限公司<br />敏感词: 非法|监管|风险|信用<br /><br /></div>
+					</div>
+
+                    <div class="chart-div">
+                        <div class="chart-loader">
+                            <!--                            <div class="loader"></div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-cell flex-cell-c">
+                <div class="chart-wrapper">
+                    <div style="margin-top: 3%; width: 100%; height: 15%;">
+                        <div style="text-align: center;">
+                            <p style="color: #9aa8d4; font-size: 3em;">历史交易总笔数</p>
+                            <p style="color: #e5e528; font-size: 4em;"><strong>55654645455</strong></p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="float: left; margin-top: 3%; width: 33.3%; background:url(../resource/img/linecc.png) no-repeat right center;">
+                                <p style="color: #9aa8d4; font-size: 2em;">今日交易笔数</p>
+                                <p style="color: #e5e528; font-size: 3em;"><strong>555</strong></p>
+                            </div>
+
+                            <div style="float: left; margin-top: 3%; width: 33.3%; background:url(../resource/img/linecc.png) no-repeat right center;">
+                                <p style="color: #9aa8d4; font-size: 2em;">交易成功率</p>
+                                <p style="color: #e5e528; font-size: 3em;"><strong>98.89%</strong></p>
+                            </div>
+                            <div style="float: left; margin-top: 3%; width: 33.3%;">
+                                <p style="color: #9aa8d4; font-size: 2em;">TPS并发数</p>
+                                <p style="color: #e5e528; font-size: 3em;"><strong>10</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: 10%; width: 100%; height: 85%;">
+                        <!--                        <h3 class="chart-title">交易分布</h3>-->
+                        <div id="geo" class="chart-div chart-done"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-cell flex-cell-r">
+                <div class="chart-wrapper">
+                    <!--                    <h3 class="chart-title"></h3>-->
+                    <div style="position: absolute; width: 100%; height: 80%;">
+                        <div id="bar" class="chart-div chart-done"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer id="footer"></footer>
+</body>
+
+<script type="text/javascript" src="../resource/js/common/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../resource/js/plugin/echarts.min.js"></script>
+<script type="text/javascript" src="../resource/js/plugin/china.js"></script>
+<script type="text/javascript" src="../resource/js/lxjy/lxjy.js"></script>
+<script type="text/javascript">
+    //生成地图
+    generateMap();
+    barGreate();
+    setInterval(barGreate, 5 * 1000);
+    $('div.marquee').each(function () {
+        if (this.scrollHeight > this.offsetHeight) $(this).html('<marquee behavior="scroll" direction="up" scrollamount="5" height="300" onmouseover="this.stop()" onmouseout="this.start()">' + this.innerHTML + '</marquee>');
+    });
+</script>
+
+</html>
